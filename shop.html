@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magical Shop | Mel&#39;s Dress Up Studio</title>
+  <meta name="description" content="Spend your Sparkles on wings, crowns, wands and more in Mel's Magical Shop.">
+
+  <!-- ================================================================
+       DOMAIN: once the site is live, replace https://www.example.com/
+       with its real address on every page (canonical, og:url, og:image)
+       so shared links show the right picture.
+       ================================================================ -->
+  <link rel="canonical" href="https://www.example.com/shop.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mel's Dress Up Studio">
+  <meta property="og:title" content="Magical Shop | Mel&#39;s Dress Up Studio">
+  <meta property="og:description" content="Spend your Sparkles on wings, crowns, wands and more in Mel's Magical Shop.">
+  <meta property="og:url" content="https://www.example.com/shop.html">
+  <meta property="og:image" content="https://www.example.com/mel.jpg">
+  <meta property="og:image:alt" content="Mel, a smiling girl with curly hair, cheering with her arms up">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mel Dress Up">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the fun</a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+        <li><a href="./index.html" aria-label="Home"><span data-icon="home"></span><span class="nav-label">Home</span></a></li>
+        <li><a href="./gallery.html" aria-label="Gallery"><span data-icon="image"></span><span class="nav-label">Gallery</span></a></li>
+        <li><a href="./shop.html" aria-current="page" aria-label="Shop"><span data-icon="bag"></span><span class="nav-label">Shop</span></a></li>
+        <li><a href="./dreamland.html" aria-label="Dreamland"><span data-icon="sparkles"></span><span class="nav-label">Dreamland</span></a></li>
+    </ul>
+  </nav>
+  <div class="sky" data-stars="8" aria-hidden="true"></div>
+
+  <div class="page">
+    <main id="main" class="wrap">
+      <header class="page-head">
+        <div class="head-row">
+          <div class="title-pill"><span data-icon="bag"></span><h1 class="gradient-title">Magical Shop</h1></div>
+          <p class="sparkle-count"><span data-icon="sparkles"></span><strong id="sparkle-count">500</strong> Sparkles</p>
+        </div>
+      </header>
+      <!-- ==============================================================
+           Play money only. Sparkles live in this browser; nothing here
+           takes real payments or asks for any personal information.
+           Items and prices are in data.js ("shop").
+           ============================================================== -->
+      <ul class="shop-grid" id="shop-grid" aria-live="polite"></ul>
+      <div class="panel note-card"><span data-icon="sparkles"></span><p>Earn more sparkles by creating and sharing your amazing characters! ✨</p></div>
+    </main>
+  </div>
+  <p class="footer-note">&copy; <span data-year>2026</span> Mel's Dress Up Studio. Made for playing, no sign-up needed.</p>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script>document.querySelectorAll("[data-year]").forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
+</body>
+</html>

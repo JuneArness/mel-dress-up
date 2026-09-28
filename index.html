@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mel&#39;s Dress Up Studio</title>
+  <meta name="description" content="A fun and creative dress-up game for kids where they can style adorable 3D characters with a magical wardrobe.">
+
+  <!-- ================================================================
+       DOMAIN: once the site is live, replace https://www.example.com/
+       with its real address on every page (canonical, og:url, og:image)
+       so shared links show the right picture.
+       ================================================================ -->
+  <link rel="canonical" href="https://www.example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mel's Dress Up Studio">
+  <meta property="og:title" content="Mel&#39;s Dress Up Studio">
+  <meta property="og:description" content="A fun and creative dress-up game for kids where they can style adorable 3D characters with a magical wardrobe.">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="https://www.example.com/mel.jpg">
+  <meta property="og:image:alt" content="Mel, a smiling girl with curly hair, cheering with her arms up">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#ec4899">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mel Dress Up">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the fun</a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+        <li><a href="./index.html" aria-current="page" aria-label="Home"><span data-icon="home"></span><span class="nav-label">Home</span></a></li>
+        <li><a href="./gallery.html" aria-label="Gallery"><span data-icon="image"></span><span class="nav-label">Gallery</span></a></li>
+        <li><a href="./shop.html" aria-label="Shop"><span data-icon="bag"></span><span class="nav-label">Shop</span></a></li>
+        <li><a href="./dreamland.html" aria-label="Dreamland"><span data-icon="sparkles"></span><span class="nav-label">Dreamland</span></a></li>
+    </ul>
+  </nav>
+  <div class="sky" data-stars="8" aria-hidden="true"><span class="blob blob-1"></span><span class="blob blob-2"></span><span class="blob blob-3"></span></div>
+
+  <div class="page">
+    <header class="page-head">
+      <div class="title-pill"><span data-icon="sparkles" data-icon-class="icon spin-pulse"></span><h1 class="gradient-title">Mel Plays Dress Up</h1><span data-icon="sparkles" data-icon-class="icon spin-pulse"></span></div>
+      <p class="subtitle">Pick a friend and make them fabulous! ✨</p>
+    </header>
+
+    <main id="main">
+      <div id="dress-up">
+        <h2 class="sr-only">Pick a friend</h2>
+        <div class="picker-wrap"><ul class="picker" id="character-picker" aria-label="Friends"></ul></div>
+
+        <div class="studio">
+          <section class="studio-wardrobe" aria-label="Wardrobe">
+            <div class="panel wardrobe">
+              <div class="wtabs" id="wardrobe-tabs" role="tablist" aria-label="Wardrobe"></div>
+              <div class="wpanel" id="wardrobe-grid" role="tabpanel" tabindex="0"></div>
+            </div>
+          </section>
+
+          <section class="studio-stage" aria-label="Your character">
+            <div class="panel stage-card">
+              <div class="stage" id="character-stage">
+                <div id="character-display"></div>
+                <span class="name-tag" id="character-name" aria-hidden="true"></span>
+              </div>
+              <div class="stage-actions">
+                <button type="button" class="btn btn-outline" id="start-over"><span data-icon="reset"></span>Start Over</button>
+                <button type="button" class="btn btn-primary" id="save-look"><span data-icon="download"></span>Save My Creation!</button>
+              </div>
+              <p class="sr-only" id="dress-live" role="status" aria-live="polite"></p>
+            </div>
+          </section>
+        </div>
+        <noscript><p class="panel empty">Mel needs JavaScript turned on to play dress up.</p></noscript>
+      </div>
+    </main>
+  </div>
+  <p class="footer-note">&copy; <span data-year>2026</span> Mel's Dress Up Studio. Made for playing, no sign-up needed.</p>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script src="./render.js"></script>
+  <script src="./dress-up.js"></script>
+  <script>document.querySelectorAll("[data-year]").forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dreamland | Mel&#39;s Dress Up Studio</title>
+  <meta name="description" content="Tap stars, moonbeams, clouds and rainbows in Mel's magical Dreamland.">
+
+  <!-- ================================================================
+       DOMAIN: once the site is live, replace https://www.example.com/
+       with its real address on every page (canonical, og:url, og:image)
+       so shared links show the right picture.
+       ================================================================ -->
+  <link rel="canonical" href="https://www.example.com/dreamland.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mel's Dress Up Studio">
+  <meta property="og:title" content="Dreamland | Mel&#39;s Dress Up Studio">
+  <meta property="og:description" content="Tap stars, moonbeams, clouds and rainbows in Mel's magical Dreamland.">
+  <meta property="og:url" content="https://www.example.com/dreamland.html">
+  <meta property="og:image" content="https://www.example.com/mel.jpg">
+  <meta property="og:image:alt" content="Mel, a smiling girl with curly hair, cheering with her arms up">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#312e81">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mel Dress Up">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="apple-touch-icon" href="./icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="dream-page">
+  <a class="skip-link" href="#main">Skip to the fun</a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+        <li><a href="./index.html" aria-label="Home"><span data-icon="home"></span><span class="nav-label">Home</span></a></li>
+        <li><a href="./gallery.html" aria-label="Gallery"><span data-icon="image"></span><span class="nav-label">Gallery</span></a></li>
+        <li><a href="./shop.html" aria-label="Shop"><span data-icon="bag"></span><span class="nav-label">Shop</span></a></li>
+        <li><a href="./dreamland.html" aria-current="page" aria-label="Dreamland"><span data-icon="sparkles"></span><span class="nav-label">Dreamland</span></a></li>
+    </ul>
+  </nav>
+  <div class="dream-bg" id="dream-bg" aria-hidden="true"></div>
+  <div class="page dream">
+    <main id="main" class="wrap">
+      <div id="dreamland">
+      <header class="page-head">
+        <div class="dream-title"><span data-icon="sparkles"></span><h1>Dreamland</h1><span data-icon="sparkles"></span></div>
+        <p class="dream-sub">Where imagination comes to life ✨</p>
+      </header>
+
+      <h2 class="sr-only">Pick a dream</h2>
+      <ul class="scene-switcher" id="scene-switcher"></ul>
+
+      <section class="glass dream-card" aria-labelledby="scene-help">
+        <p class="scene-help" id="scene-help"></p>
+        <div class="dream-row">
+          <div class="explorer-wrap" id="with-character" hidden><div class="explorer" id="explorer"></div></div>
+          <div class="scene-box" id="scene-box"></div>
+        </div>
+        <div class="create-first" id="no-character" hidden><a class="ghost-btn" href="./index.html">✨ Create your character first!</a></div>
+      </section>
+
+      <section class="journal" aria-labelledby="journal-title">
+        <h2 id="journal-title"><span data-icon="star" data-icon-filled></span> Dream Journal</h2>
+        <ul id="journal"></ul>
+      </section>
+      </div>
+    </main>
+  </div>
+  <p class="footer-note">&copy; <span data-year>2026</span> Mel's Dress Up Studio. Made for playing, no sign-up needed.</p>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+  <script src="./render.js"></script>
+  <script src="./dreamland.js"></script>
+  <script>document.getElementById("journal").innerHTML = (MEL_DATA.dreamJournal || []).map(function (t) { return "<li>\u2728 " + MelApp.esc(t) + "</li>"; }).join("");</script>
+  <script>document.querySelectorAll("[data-year]").forEach(function (e) { e.textContent = new Date().getFullYear(); });</script>
+</body>
+</html>
